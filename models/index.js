@@ -1,8 +1,8 @@
 var Place = require('./place');
 var Hotel = require('./hotel');
-var Sequelize = require('sequelize')
+var Sequelize = require('sequelize');
 var Restaurant = require('./restaurant');
-var db = new Sequelize('postgres://localhost:5432/tripplanner', {logging: false});
+var db = require('./_db');
 var Activity = require('./activity');
 
     
