@@ -2,7 +2,7 @@ const volleyball = require('volleyball');  //logger
 const express = require('express'); //require express
 const app = express(); // creates an instance of an express application
 const nunjucks = require('nunjucks');
-// const wikiRoutes = require('./routes/wiki.js');
+const tripRoutes = require('./routes/tripRoutes');
 const bodyParser = require('body-parser');
 
 // have res.render work with html files
@@ -24,7 +24,8 @@ app.use(bodyParser.json());
 
 //set up static route and main page route
 app.use(express.static('public'))
-// app.use('/wiki', wikiRoutes);
+
+app.use('/', tripRoutes);
 
 // catch 404 (i.e., no route was hit) and forward to error handler
 app.use(function(req, res, next) {
