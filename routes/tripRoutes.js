@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const Promise = require('bluebird')
 
 var models = require('../models')
 var modelPlace = require('../models/place');
@@ -14,14 +15,15 @@ var Place = modelPlace;
 
 
 router.get('/', function(req, res, next){
-	// var Hp = Hotel.findAll();
-	// var Rp = Restaurant.findAll();
-	// var Ap =Activity.findAll();
-	// Promise.all([Hp, Rp, Ap])
-	// 	.then(function(){
-	Hotel.findAll()
-		.then(function(hotels){
-		res.render('../views/index.html', {hotels:hotels});
+	var Hp = Hotel.findAll();
+	var Rp = Restaurant.findAll();
+	var Ap =Activity.findAll();
+	Promise.all([Hp, Rp, Ap])
+		.spread(function(hotels, restaurants, activities){
+
+		//Hotel.findAll()
+		//.then(function(hotels){
+			res.render('../views/index.html', {hotels:hotels, restaurants:restaurants, activities:activities});
 	})
 		// res.render('../views/index.html');
 		// })

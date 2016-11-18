@@ -8,6 +8,7 @@ const bodyParser = require('body-parser');
 // have res.render work with html files
 app.set('view engine', 'html');
 
+
 // when giving html files to res.render, tell it to use nunjucks
 app.engine('html', nunjucks.render);
 
@@ -23,7 +24,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 //set up static route and main page route
-app.use(express.static('public'))
+app.use('/bootstrap', express.static('node_modules/bootstrap/dist'))
+app.use('/jquery', express.static('node_modules/jquery/dist'))
+
 
 app.use('/', tripRoutes);
 

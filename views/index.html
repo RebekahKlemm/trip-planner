@@ -9,12 +9,24 @@
 </head>
 <body>
 
+<label for="hotel_field">Hotels:</label>
 <select>
     {% for hotel in hotels %}
-    <option value="hotel">{{ hotel.name }}</option>
+    <option value="hotel" id="hotel_field">{{ hotel.name }}</option>
     {% endfor %}
 </select>
-
+<label for="restaurant_field">Restaurants:</label>
+<select>
+    {% for restaurant in restaurants %}
+    <option value="restaurant" id="restaurant_field">{{ restaurant.name }}</option>
+    {% endfor %}
+</select>
+<label for="activity_field">Activities:</label>
+<select>
+    {% for activity in activities %}
+    <option value="activity" id="activity_field">{{ activity.name }}</option>
+    {% endfor %}
+</select>
 
 </body>
 </html>
