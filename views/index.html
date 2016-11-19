@@ -1,14 +1,14 @@
 
+{% extends 'layout.html' %}
+
 <!-- layout.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>{% block title %}Trip Planner{% endblock %}</title>
-    <!--<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">-->
-    <!--<link href="/stylesheets/style.css" rel="stylesheet">-->
 </head>
+{% block content %}
 <body>
-
 <label for="hotel_field">Hotels:</label>
 <select>
     {% for hotel in hotels %}
@@ -29,5 +29,6 @@
 </select>
 
 </body>
+{% endblock %}
 </html>
 
