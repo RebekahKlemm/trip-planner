@@ -6,11 +6,39 @@
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
     <link href="../public/stylesheets/tripplanner.css" rel="stylesheet">
 </head>
+<nav class = "navbar navbar-default">
+	<p class = navbar-text>Tripplanner </p>
+	<p class = navbar-text>Home </p>
+	<p class = navbar-text>About </p>
+	<p class = navbar-text>Contact </p>
+
+</nav>
 <body>
 
-{% block content %}
+	<div class = "container">
+		<div class = "row">
+			<div class ="col-md-8" "map">
+			</div>
+			<div class = "col-md-4">
+				<div class = "options">
+					{% block content %}
+					{% endblock %}
+				</div>
+				<div class = "dayheader">
+					Hahaha!
+				</div>
+				<div class = "btn-group" role ="group" aria-label = "...">
+					<button type="button" class="btn btn-default">Left</button>
+					<button type="button" class="btn btn-default">Middle</button>
+					<button type="button" class="btn btn-default">Right</button>
+			</div>
+		</div>
+	</div>
 
-{% endblock %}
+
+
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZXeLEo_eAvJKGhLzyTlcarCH4vOtQmmQ&sensor=true">
+	</script>
 
 <!-- Script tags go here! -->
 
